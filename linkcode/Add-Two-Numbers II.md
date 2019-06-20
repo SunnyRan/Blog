@@ -1,9 +1,5 @@
----
-title: LeetCode-Add Two Numbers II
-date: 2017-07-30 20:03:56
-tags: CSDN迁移
----
- 版权声明：本文为博主原创文章，未经博主允许不得转载。 https://blog.csdn.net/Sunny_Ran/article/details/76404417   
+# LeetCode-Add Two Numbers II
+
   # Description
 
  You are given two non-empty linked lists representing two non-negative integers. The most significant digit comes first and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
