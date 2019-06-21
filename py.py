@@ -22,15 +22,15 @@ def list_all(dir_name):
     for dirpath, dirnames, filenames in os.walk(dir_name):
         for filename in filenames:
             res = pinyin_converter.get_pinyin(filename, '_')
-            res = remove_chars(res, '-', '(', ')', '（', '）')
+            res = remove_chars(res, '(', ')', '（', '）')
             res = res.replace(' ', '_')
             res = res.lower()
             if PREFIX_NAME != '':
                 res = PREFIX_NAME + res
             if res[-5] == '_':
                 res = res[:-5] + res[-4:]
-            src_path = dirpath + '\\' + filename
-            dest_path = dirpath + '\\' + res
+            src_path = dirpath + '/' + filename
+            dest_path = dirpath + '/' + res
             print(src_path + '->' + res)
             os.rename(src_path, dest_path)
 
@@ -48,8 +48,8 @@ if __name__ == '__main__':
     if len(sys.argv) == 1:
         print('must has name dir')
         exit(-1)
-    if len(sys.argv) >= 2:
-        PREFIX_NAME = sys.argv[2]
+    # if len(sys.argv) >= 2:
+    #     PREFIX_NAME = sys.argv[2]
     for dir_name in sys.argv[1:]:
         list_all(dir_name)
 
